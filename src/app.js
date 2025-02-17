@@ -8,24 +8,23 @@ app.listen(3000, ()=>{
     console.log("Server Started...");
 });
 
-//request handle
-
-app.use("/profile",(req, res) => {
-    res.send("Welcome to Profile");
+// GET request handle
+app.get("/user", (req, res) => {
+    res.send({firstname: "Pranjul", lastname: "Upadhyay"});
 });
 
-app.use("/test", (req, res)=>{
-    res.send("Testing Zone");
+// POST reuest handle
+app.post("/user", (req, res) => {
+    res.send("Data Saved Successfully");
 });
 
-app.use("/payment", (req, res)=>{
-    res.send("Payment Page");
+// DELETE request handle
+app.delete("/user", (req, res) => {
+    res.send("User Deleted");
 });
 
-app.use("/abc", (req, res)=>{
-    res.send("ABCDEF");
+// PATCH request handle
+app.patch("/user", (req, res) => {
+    res.send("Patched!!!");
 });
 
-app.use("/", (req, res)=>{
-    res.send("DashBoard hai");
-})
